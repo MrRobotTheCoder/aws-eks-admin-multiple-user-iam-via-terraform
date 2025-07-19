@@ -8,6 +8,6 @@ resource "aws_iam_user" "admin_user" {
 
 # Resource: Admin Access Policy - Attach it to admin user
 resource "aws_iam_role_policy_attachment" "admin_user" {
-  role       = aws_iam_role.role.admin_user.name
+  role       = aws_iam_user.admin_user.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
